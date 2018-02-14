@@ -4,8 +4,7 @@
 main.css
 main.sqlite
 *.sqlite
-*db
-*db/migrate
+db/migrate
 
 public/css/main.css
 public/css/.sass-cache/
