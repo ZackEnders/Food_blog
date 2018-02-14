@@ -2,7 +2,10 @@
 *.css.map
 *.DS_Store
 main.css
-
+main.sqlite
+*.sqlite
+*db
+*db/migrate
 
 public/css/main.css
 public/css/.sass-cache/
