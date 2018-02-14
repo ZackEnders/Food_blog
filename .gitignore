@@ -2,3 +2,9 @@
 *.css.map
 *.DS_Store
 main.css
+
+
+public/css/main.css
+public/css/.sass-cache/
+public/css/main.css.map
+Gemfile.lock
