@@ -56,11 +56,26 @@ erb :"/user/profile"
 end
 
 get '/blogs/view' do
-@blogs = Blog.all
+
+@user = User.find(session[:user_id])
+@blogs = Blog.where(user_id: @user.id)
 
 erb :"blogs/viewblogs"
 end
 
+get '/blogs/edit' do
+
+
+erb :"/blogs/editblog"
+end
+
+post '/update_blog' do
+
+blog = Blog.find(session[:user_id])
+blog.update(title: params[:title], category: params[:category], content: params[:content])	
+redirect "/blogs/view"
+
+end
 
 
 
