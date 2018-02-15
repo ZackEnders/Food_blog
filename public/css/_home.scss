@@ -2,8 +2,30 @@
 	margin: 0;
 	padding: 0;
 }
+html, body {
+	height: 100%;
+}
+
 
 body {
 	background: url(https://mealpros.com/wp-content/uploads/2017/12/computerFood.jpg) no-repeat;
 	background-size: cover;
 }
+
+.container{
+	width: 600px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+h1 {
+	color:
+	font: 900 96px 'Pacifico', cursive;
+	text-shadow: 0px, 2px, 4px rgba(0,0,0,0.6);
+	margin-bottom: 24px;
+
+}
+
+// .btn {
+// 	background:
+// }
