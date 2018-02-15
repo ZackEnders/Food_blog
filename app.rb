@@ -8,7 +8,6 @@ set :sessions, true
 
 
 
-
 require './models'
 
 
@@ -50,7 +49,69 @@ end
 get '/user/:id/profile' do
 
 @user = User.find(params[:id])
-
+@person = User.find(session[:user_id])
 
 erb :"/user/profile"
 end
+
+post '/update_fname' do
+
+@user = User.find(session[:user_id])
+@user.update(fname: params[:fname], lname: @user.lname, username: @user.username, password: @user.password)
+
+redirect "/user/#{@user.id}/profile"
+end
+
+post '/update_password' do 
+
+@user = User.find(session[:user_id])
+@user.update(fname: @user.fname, lname: @user.lname, username: @user.username, password: params[:password])
+	redirect '/login'
+end
+
+post '/delete_user' do 
+
+@user = User.find(session[:user_id])
+@user.destroy
+	redirect '/login'
+end
+
+post '/create_blog_post' do 
+
+@user = User.find(session[:user_id])
+
+	@title = params[:title]
+	@category = params[:category]
+	@content = params[:content]
+
+
+Blog.create(title: @title, category: @category, content: @content, user_id: @user.id)
+
+
+redirect "/user/#{@user.id}/profile"
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

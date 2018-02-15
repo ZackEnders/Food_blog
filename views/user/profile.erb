@@ -5,7 +5,7 @@
 </head>
 <body>
 	<div><h1> Welcome <%= @user.fname%> <%=  @user.lname %>! </h1></div>
-	<h1>Your username is <%= @user.username %> </h1>
+	<h1>Your username is <%= @user.username %></h1>
 	<div>Update first name</div>
 	<form method="post" action="/update_fname">
 		<input type="text" name="fname" placeholder="Update First Name">
@@ -27,7 +27,13 @@
 
 
 	<div>My Blogs</div>
-	<div>Create Blog</div>
+	<h1>Create Blog</h1>
+	<form method="post" action="/create_blog_post">
+		<input type="text" name="title" placeholder="Title">
+		<input type="text" name="category" placeholder="Category">
+		<input type="text" name="content" placeholder="Content">
+		<input type="submit" value="Post blog">
+	</form>
 
 
 </body>
