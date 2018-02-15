@@ -1,0 +1,9 @@
+<div id='blog1'><h2>BLOG FEED</h2></div>
+
+<hr>
+<h3>List of Blogs</h3>
+<% @blogs.each do |t| %>
+<div><%= t.title %></div>
+<div><%= t.category %></div>
+<div><%= t.content %></div>
+<% end %>

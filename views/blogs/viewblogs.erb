@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<hr>
+<h3>List of Blog titles</h3>
+<% @blogs.each do |t| %>
+<a href='/blogs/<%= t.title %>'><div><%= t.title %></div></a>
+<% end %>
+
+</body>
+</html>

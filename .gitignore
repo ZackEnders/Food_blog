@@ -2,8 +2,8 @@
 *.css.map
 *.DS_Store
 main.css
-main.sqlite
-*.sqlite
+main.sqlite3
+*.sqlite3
 *db/migrate
 
 public/css/main.css
