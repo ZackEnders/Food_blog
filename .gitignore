@@ -3,7 +3,7 @@
 *.DS_Store
 main.css
 main.sqlite3
-*.sqlite
+*.sqlite3
 *db/migrate
 
 public/css/main.css
