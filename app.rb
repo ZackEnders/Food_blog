@@ -2,8 +2,10 @@ require 'sinatra'
 require 'sinatra/activerecord'
 
 
-set database: 'sqlite3:main.sqlite'
+
+set :database, 'sqlite3:main.sqlite3'
 set :sessions, true
+
 
 
 
@@ -22,6 +24,7 @@ get '/login' do
 
 erb :"/user/login"
 end
+
 
 post '/user_login' do
 
@@ -43,6 +46,10 @@ get '/blogs' do
 erb :"blogs/blogshome"
 end
 
+
 get '/profile' do
 
+
+
+erb :"/user/profile"
 end
