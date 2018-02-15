@@ -48,7 +48,12 @@ post '/create_user' do
 
 User.create(fname: @fname, lname: @lname, username: @username, password: @password)
 
-redirect '/user/#{@user.id}/profile'
+if user = User.where(username: @username, password: @password).first
+	session[:user_id] = user.id
+	redirect "/user/#{user.id}/profile"
+	else
+		redirect '/'
+	end	
 
 end
 
@@ -105,7 +110,7 @@ post '/update_password' do
 
 @user = User.find(session[:user_id])
 @user.update(fname: @user.fname, lname: @user.lname, username: @user.username, password: params[:password])
-	redirect '/login'
+	redirect '/'
 end
 
 post '/delete_user' do 
