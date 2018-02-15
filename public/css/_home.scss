@@ -3,9 +3,125 @@
 	margin: 0;
 	padding: 0;
 }
+html, body {
+	height: 100%;
+}
+
 
 body {
 	background: url(https://mealpros.com/wp-content/uploads/2017/12/computerFood.jpg) no-repeat;
 	background-size: cover;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
+
+.container{
+	max-width: 600px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+h1 {
+	color: #ffffff;
+	font: 900 96px 'Pacifico', cursive;
+	text-shadow: 0px, 2px, 4px rgba(0,0,0,0.6);
+	margin-bottom: 24px;
+}
+
+.login-page {
+	width: 360px;
+	padding: 10% 2 2;
+	margin: auto;
+}
+
+.form {
+	position: reative;
+	z-index: 1;
+	background: rgba(7, 40, 195, 0.8);
+	max-width: 0 auto 100px;
+	padding: 45px;
+	text-align: center;
+}
+
+.form input {
+	font-family: "Roboto", sans-serif;
+	outline: 1;
+	background: #f2f2f2;
+	width: 100%;
+	border: 0;
+	margin: 0 0 15px;
+	padding: 20px;
+	box-sizing: border-box;
+	font-size: 14px;
+}
+
+.form button {
+	font-family: "Roboto", sans-serif;
+	text-transform: uppercase;
+	outline: 0;
+	background: #4CAF50;
+	width: 100%;
+	border: 0;
+	padding: 15px;
+	color: #ffffff;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// .btn {
+// 	background: linear-gradient(to right, rgba(73,155,234,1) 0%, rgba(32,124,229,0.18) 100%);
+// 	background-radius: 4px;
+// 	padding: 20px 48px;
+// 	font: 20px 'Pacifico', cursive;
+// 	text-decoration: none;
+// 	text-transform: uppercase;
+// 	letter-spacing: 1px;
+// 	text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.6);
+// 	-webkit-transition: box-shadow 1s ease;
+//  	transition: box-shadow 1s ease;
+// }
+ 
+//  btn.hover {
+//  	box-shadow: 0px 4px 4px rgba(0,0,0,0.3);
+//  	-webkit-transition: box-shadow 1s ease;
+//  	transition: box-shadow 1s ease;
+//  }
 
