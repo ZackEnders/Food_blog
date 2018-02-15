@@ -54,3 +54,21 @@ get '/user/:id/profile' do
 
 erb :"/user/profile"
 end
+
+post '/update_fname' do
+@user = User.find(session[:user_id])
+
+@user.update(fname: params[:fname], lname: @user.lname, username: @user.username, password: @user.password)
+
+redirect "/user/#{@user.id}/profile"
+end
+
+
+post '/delete_user' do 
+
+
+@user = User.find(session[:user_id])
+@user.destroy
+redirect '/login'
+
+end
