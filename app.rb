@@ -75,7 +75,7 @@ blog = Blog.find(session[:user_id])
 blog.update(title: params[:title], category: params[:category], content: params[:content])	
 redirect "/blogs/view"
 
-
+end
 post '/update_fname' do
 
 @user = User.find(session[:user_id])
