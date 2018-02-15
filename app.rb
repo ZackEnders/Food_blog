@@ -40,9 +40,9 @@ user = User.where(username: @username, password: @password).first
 end
 
 get '/blogs' do
+@blogs = Blog.all
 
-
-erb :"/blogs/blogshome"
+erb :"/blogs/blogsfeed"
 end
 
 
@@ -53,6 +53,28 @@ get '/user/:id/profile' do
 
 erb :"/user/profile"
 end
+
+
+get '/blogs/view' do
+
+@user = User.find(session[:user_id])
+@blogs = Blog.where(user_id: @user.id)
+
+erb :"blogs/viewblogs"
+end
+
+get '/blogs/edit' do
+
+
+erb :"/blogs/editblog"
+end
+
+post '/update_blog' do
+
+blog = Blog.find(session[:user_id])
+blog.update(title: params[:title], category: params[:category], content: params[:content])	
+redirect "/blogs/view"
+
 
 post '/update_fname' do
 
@@ -89,25 +111,8 @@ Blog.create(title: @title, category: @category, content: @content, user_id: @use
 
 
 redirect "/user/#{@user.id}/profile"
+
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
