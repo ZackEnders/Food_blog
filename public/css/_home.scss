@@ -19,13 +19,21 @@ body {
 }
 
 h1 {
-	color:
+	color: #000000;
 	font: 900 96px 'Pacifico', cursive;
 	text-shadow: 0px, 2px, 4px rgba(0,0,0,0.6);
 	margin-bottom: 24px;
-
 }
 
-// .btn {
-// 	background:
-// }
+.btn {
+	background-image: linear-gradient(to left bottom, #491466, #750464, #9a005a, #b70b4b, #cb3137);
+	background-radius: 4px;
+	padding: 20px 48px;
+	font: 20px 'Pacifico', cursive;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.6);
+
+
+}
