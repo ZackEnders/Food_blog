@@ -4,10 +4,13 @@
 	<title></title>
 </head>
 <body>
-	<%# <div> <%= @fname @lname </div> %>
+	<div><h1> Welcome <%= @user.fname%> <%=  @user.lname %>! </h1></div>
+	<h1>Your username is <%= @user.username %> </h1>
 	<div>Update first name</div>
-
-	<%#<div> <%= @username </div>%>
+	<form method="post" action="/update_fname">
+		<input type="text" name="fname" placeholder="Update First Name">
+		<input type="submit" value="Update">
+	</form>
 	<div>Update Password</div>
 	<form method="post" action="/update_password">
 		<input type="text" name="password" placeholder="Update Password">
