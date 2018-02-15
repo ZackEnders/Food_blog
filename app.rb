@@ -2,7 +2,7 @@ require 'sinatra'
 require 'sinatra/activerecord'
 
 
-set database: 'sqlite3:main.sqlite'
+set :database, 'sqlite3:main.sqlite3'
 
 
 
@@ -20,4 +20,13 @@ get '/login' do
 
 
 erb :"/user/login"
+end
+
+
+
+get '/profile' do
+
+
+
+erb :"/user/profile"
 end
