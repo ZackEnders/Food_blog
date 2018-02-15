@@ -41,9 +41,9 @@ user = User.where(username: @username, password: @password).first
 end
 
 get '/blogs' do
+@blogs = Blog.all
 
-
-erb :"/blogs/blogshome"
+erb :"/blogs/blogsfeed"
 end
 
 
@@ -54,3 +54,15 @@ get '/user/:id/profile' do
 
 erb :"/user/profile"
 end
+
+get '/blogs/view' do
+@blogs = Blog.all
+
+erb :"blogs/viewblogs"
+end
+
+
+
+
+
+

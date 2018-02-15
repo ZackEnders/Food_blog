@@ -5,5 +5,11 @@
 </head>
 <body>
 
+<hr>
+<h3>List of Blog titles</h3>
+<% @blogs.each do |t| %>
+<a href='/blogs/<%= t.id %>'><div><%= t.title %></div></a>
+<% end %>
+
 </body>
 </html>
