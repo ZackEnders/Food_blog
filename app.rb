@@ -36,19 +36,20 @@ user = User.where(username: @username, password: @password).first
 	session[:user_id] = user.id
 	redirect "/user/#{user.id}/profile"
 	else
-		redirect '/'
+		redirect '/login'
 	end	
 end
 
 get '/blogs' do
 
 
-erb :"blogs/blogshome"
+erb :"/blogs/blogshome"
 end
 
 
-get '/profile' do
+get '/user/:id/profile' do
 
+@user = User.find(params[:id])
 
 
 erb :"/user/profile"
