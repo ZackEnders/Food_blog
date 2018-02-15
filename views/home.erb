@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
-	<link rel="stylesheet" type="text/css" href="../css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
 	<title>Food Blog</title>
 </head>
@@ -15,21 +15,22 @@
 		<a href="#" class="btn">Get Started</a> -->
 		<div class="login-page">
 		<div class="form">
-			<form class="register-form">
-				<input type="text" placeholder="user name"/>
-				<input type="text" placeholder="password"/>
-				<input type="text" placeholder="email"/>
+			<form class="register-form" method="post" action="/create_user">
+				<input type="text" name="fname" placeholder="First name"/>
+				<input type="text" name="lname" placeholder="Last name"/>
+				<input type="text" name="username" placeholder="Username"/>
+				<input type="password" name="password" placeholder="Password">
 				<button>Create</button>
 				<p class="message">Already Register? <a href="#"> Login</a></p>
 			</form>
 
-			<form class="login-form">
-				<input type="text" placeholder="user name"/>
-				<input type="password" placeholder="password"/>
-				<button>Login</button>
+			<form class="login-form" method="post" action="/user_login">
+				<input type="text" name="username" placeholder="user name"/>
+				<input type="password" name="password" placeholder="password"/>
+				<button href="/user_login">Login</button>
 				<p class="message">Not Registered?<a  href="#"> Register</a></p>
 			</form>
 	</div>
-	<script type="text/javascript" src="../javascript/main.js"></script>
+	<script type="text/javascript" src="javascript/main.js"></script>
 </body>
 </html>

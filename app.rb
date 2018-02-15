@@ -35,7 +35,7 @@ user = User.where(username: @username, password: @password).first
 	session[:user_id] = user.id
 	redirect "/user/#{user.id}/profile"
 	else
-		redirect '/login'
+		redirect '/'
 	end	
 end
 
@@ -75,7 +75,7 @@ blog = Blog.find(session[:user_id])
 blog.update(title: params[:title], category: params[:category], content: params[:content])	
 redirect "/blogs/view"
 
-
+end
 post '/update_fname' do
 
 @user = User.find(session[:user_id])
