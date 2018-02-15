@@ -35,7 +35,7 @@ user = User.where(username: @username, password: @password).first
 	session[:user_id] = user.id
 	redirect "/user/#{user.id}/profile"
 	else
-		redirect '/login'
+		redirect '/'
 	end	
 end
 
