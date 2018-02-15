@@ -39,6 +39,24 @@ user = User.where(username: @username, password: @password).first
 	end	
 end
 
+post '/create_user' do
+
+	@fname = params[:fname]
+	@lname = params[:lname]
+	@username= params[:username]
+	@password = params[:password]
+
+User.create(fname: @fname, lname: @lname, username: @username, password: @password)
+
+if user = User.where(username: @username, password: @password).first
+	session[:user_id] = user.id
+	redirect "/user/#{user.id}/profile"
+	else
+		redirect '/'
+	end	
+
+end
+
 get '/blogs' do
 @blogs = Blog.all
 
@@ -71,8 +89,12 @@ end
 
 post '/update_blog' do
 
+	@title = params[:title]
+	@category = params[:category]
+	@content = params[:content]
+
 blog = Blog.find(session[:user_id])
-blog.update(title: params[:title], category: params[:category], content: params[:content])	
+blog.update(title: @title, category: @category, content: @content)	
 redirect "/blogs/view"
 
 end
@@ -88,7 +110,7 @@ post '/update_password' do
 
 @user = User.find(session[:user_id])
 @user.update(fname: @user.fname, lname: @user.lname, username: @user.username, password: params[:password])
-	redirect '/login'
+	redirect '/'
 end
 
 post '/delete_user' do 
