@@ -1,14 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
+
+<html id="viewblogs-background">
+
 <body>
 
 <hr>
 <h3>List of Blog titles</h3>
 <% @blogs.each do |t| %>
-<a href='/blogs/<%= t.title %>'><div><%= t.title %></div></a>
+<a href='/blogs/<%= t.id %>/<%= t.title %>/edit/<%= t.category%>/<%= t.content%>'><div><%= t.title %></div></a>
 <% end %>
 
 </body>
