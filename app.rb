@@ -46,7 +46,15 @@ post '/create_user' do
 	@username= params[:username]
 	@password = params[:password]
 
-User.create(fname: @fname, lname: @lname, username: @username, password: @password)
+if (@fname == '' || @lname == ''|| @username == ''|| @password == '')
+
+	redirect '/'
+
+	else
+
+		User.create(fname: @fname, lname: @lname, username: @username, password: @password)
+
+end
 
 if user = User.where(username: @username, password: @password).first
 	session[:user_id] = user.id
@@ -54,7 +62,6 @@ if user = User.where(username: @username, password: @password).first
 	else
 		redirect '/'
 	end	
-
 end
 
 get '/blogs' do
@@ -81,7 +88,8 @@ get '/blogs/view' do
 erb :"blogs/viewblogs"
 end
 
-get '/blogs/edit' do
+get '/blogs/:id/:title/edit' do
+Blog.where(id: params[:id], title: params[:title])
 
 
 erb :"/blogs/editblog"
@@ -117,7 +125,7 @@ post '/delete_user' do
 
 @user = User.find(session[:user_id])
 @user.destroy
-	redirect '/login'
+	redirect '/'
 end
 
 post '/create_blog_post' do 
