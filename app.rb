@@ -1,16 +1,10 @@
 require 'sinatra'
 require 'sinatra/activerecord'
 
-
-
 set :database, 'sqlite3:main.sqlite3'
 set :sessions, true
 
-
-
 require './models'
-
-
 
 get '/'  do
 
@@ -24,14 +18,13 @@ get '/login' do
 erb :"/user/login"
 end
 
-
 post '/user_login' do
 
 @username = params[:username]
 @password = params[:password]
 
-if
-user = User.where(username: @username, password: @password).first
+if  user = User.where(username: @username, password: @password).first
+	
 	session[:user_id] = user.id
 	redirect "/user/#{user.id}/profile"
 	else
@@ -46,7 +39,15 @@ post '/create_user' do
 	@username= params[:username]
 	@password = params[:password]
 
-User.create(fname: @fname, lname: @lname, username: @username, password: @password)
+if (@fname == '' || @lname == ''|| @username == ''|| @password == '')
+
+	redirect '/'
+
+	else
+
+		User.create(fname: @fname, lname: @lname, username: @username, password: @password)
+
+end
 
 if user = User.where(username: @username, password: @password).first
 	session[:user_id] = user.id
@@ -54,7 +55,6 @@ if user = User.where(username: @username, password: @password).first
 	else
 		redirect '/'
 	end	
-
 end
 
 get '/blogs' do
@@ -81,8 +81,12 @@ get '/blogs/view' do
 erb :"blogs/viewblogs"
 end
 
-get '/blogs/edit' do
-
+get '/blogs/:id/:title/edit/:category/:content' do
+Blog.where(id: params[:id], title: params[:title], category: params[:category], content: params[:content])
+	@title = params[:title]
+	@id = params[:id]
+	@category = params[:category]
+	@content = params[:content]
 
 erb :"/blogs/editblog"
 end
