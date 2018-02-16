@@ -1,16 +1,10 @@
 require 'sinatra'
 require 'sinatra/activerecord'
 
-
-
 set :database, 'sqlite3:main.sqlite3'
 set :sessions, true
 
-
-
 require './models'
-
-
 
 get '/'  do
 
@@ -24,14 +18,13 @@ get '/login' do
 erb :"/user/login"
 end
 
-
 post '/user_login' do
 
 @username = params[:username]
 @password = params[:password]
 
-if
-user = User.where(username: @username, password: @password).first
+if  user = User.where(username: @username, password: @password).first
+	
 	session[:user_id] = user.id
 	redirect "/user/#{user.id}/profile"
 	else
@@ -88,9 +81,12 @@ get '/blogs/view' do
 erb :"blogs/viewblogs"
 end
 
-get '/blogs/:id/:title/edit' do
-Blog.where(id: params[:id], title: params[:title])
-
+get '/blogs/:id/:title/edit/:category/:content' do
+Blog.where(id: params[:id], title: params[:title], category: params[:category], content: params[:content])
+	@title = params[:title]
+	@id = params[:id]
+	@category = params[:category]
+	@content = params[:content]
 
 erb :"/blogs/editblog"
 end
