@@ -140,6 +140,12 @@ redirect "/user/#{@user.id}/profile"
 
 end
 
+post '/delete_blog' do
+
+blog = Blog.where(session[:user_id])
+blog.destroy
+redirect "/user/profile"
+end
 
 
 
