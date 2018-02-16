@@ -91,14 +91,16 @@ Blog.where(id: params[:id], title: params[:title], category: params[:category], 
 erb :"/blogs/editblog"
 end
 
-post '/update_blog' do
+post '/blogs/:id/update_blog' do
 
 	@title = params[:title]
 	@category = params[:category]
 	@content = params[:content]
 
-blog = Blog.find(session[:user_id])
-blog.update(title: @title, category: @category, content: @content)	
+blog = Blog.find(params[:id])
+
+blog.update(title: @title, category: @category, content: @content)
+p blog	
 redirect "/blogs/view"
 
 end
@@ -140,12 +142,21 @@ redirect "/user/#{@user.id}/profile"
 
 end
 
-post '/delete_blog' do
+post '/blogs/:id/delete_blog' do
 
-blog = Blog.where(session[:user_id])
-blog.destroy
-redirect "/user/profile"
+	blog = Blog.find(params[:id])
+	blog.destroy 
+	redirect "/user/#{@user.id}/profile"
 end
+
+# post '/delete_blog'  do
+# 	# user = User.find(session[:user_id])
+# 	blog = Blog.where(title: params[:title], id: params[:id])
+
+# 	blog.destroy
+
+# 	redirect '/'
+# end
 
 
 
