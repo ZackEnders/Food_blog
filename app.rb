@@ -117,7 +117,7 @@ post '/delete_user' do
 
 @user = User.find(session[:user_id])
 @user.destroy
-	redirect '/login'
+	redirect '/'
 end
 
 post '/create_blog_post' do 
@@ -136,6 +136,12 @@ redirect "/user/#{@user.id}/profile"
 
 end
 
+post '/delete_blog' do
+
+blog = Blog.where(session[:user_id])
+blog.destroy
+redirect "/user/profile"
+end
 
 
 
