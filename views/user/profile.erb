@@ -1,8 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
+
 <body>
 	<div><h1> Welcome <%= @user.fname%> <%=  @user.lname %>! </h1></div>
 	<h1>Your username is <%= @user.username %></h1>
@@ -12,10 +8,10 @@
 		<input type="submit" value="Update">
 	</form>
 	<div>Update Password</div>
-	<form method="post" action="/update_password">
-		<input type="text" name="password" placeholder="Update Password">
-		<input type="submit" value="Update">
+	<form id="update_pword" method="post" action="/update_password">
+		<input id="password1" type="text" name="password" placeholder="Update Password">
 	</form>
+		<button id="passcheck" href="/update_password">Update</button>
 
 
 	<div>
@@ -26,8 +22,10 @@
 	</div>
 
 
-	<div>My Blogs</div>
+	
 	<h1>Create Blog</h1>
+	<div> <a href="/blogs/view"><button>My Blogs</button></a></div>
+	<br/>
 	<form method="post" action="/create_blog_post">
 		<input type="text" name="title" placeholder="Title">
 		<input type="text" name="category" placeholder="Category">
@@ -36,5 +34,9 @@
 	</form>
 
 
+	<form method="post" action="/logout">
+		<input type="submit" value="Logout">
+	</form>
+
+<script type="text/javascript" src="../../javascript/profile.js"></script>
 </body>
-</html>
