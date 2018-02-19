@@ -67,7 +67,6 @@ end
 get '/user/:id/profile' do
 
 @user = User.find(params[:id])
-@person = User.find(session[:user_id])
 
 erb :"/user/profile"
 end
@@ -104,6 +103,12 @@ p blog
 redirect "/blogs/view"
 
 end
+
+post '/logout' do
+session[:user_id] = nil
+redirect "/"
+end
+
 post '/update_fname' do
 
 @user = User.find(session[:user_id])
@@ -115,7 +120,9 @@ end
 post '/update_password' do 
 
 @user = User.find(session[:user_id])
+
 @user.update(fname: @user.fname, lname: @user.lname, username: @user.username, password: params[:password])
+session[:user_id] = nil
 	redirect '/'
 end
 
@@ -144,19 +151,11 @@ end
 
 post '/blogs/:id/delete_blog' do
 
+@user = User.find(session[:user_id])
 	blog = Blog.find(params[:id])
 	blog.destroy 
 	redirect "/user/#{@user.id}/profile"
 end
-
-# post '/delete_blog'  do
-# 	# user = User.find(session[:user_id])
-# 	blog = Blog.where(title: params[:title], id: params[:id])
-
-# 	blog.destroy
-
-# 	redirect '/'
-# end
 
 
 
