@@ -68,6 +68,7 @@ get '/user/:id/profile' do
 
 @user = User.find(params[:id])
 
+
 erb :"/user/profile"
 end
 

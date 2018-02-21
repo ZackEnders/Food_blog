@@ -19,17 +19,12 @@ html, body {
 	text-align: center;
 }
 
-.home-page h1 {
+#home-title{
 	color: #ffffff;
 	font: 900 96px 'Pacifico', cursive;
 	text-shadow: 0px, 2px, 4px rgba(0,0,0,0.6);
 	margin-bottom: 24px;
 }
-
-
-
-
-
 
 
 .login-page {
@@ -38,7 +33,7 @@ html, body {
 	margin: auto;
 }
 
-.home-page form {
+.form {
 	position: reative;
 	z-index: 1;
 	background: rgba(7, 40, 195, 0.8);
@@ -47,7 +42,7 @@ html, body {
 	text-align: center;
 }
 
-.home-page form input {
+.form input {
 	font-family: "Roboto", sans-serif;
 	outline: 1;
 	background: #f2f2f2;
@@ -59,7 +54,7 @@ html, body {
 	font-size: 14px;
 }
 
-.home-page form button {
+.form button {
 	font-family: "Roboto", sans-serif;
 	text-transform: uppercase;
 	outline: 0;

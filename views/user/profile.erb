@@ -1,40 +1,17 @@
-
-
-<div class="profile-page">
-	
-	<div class="welcome"><h1> Welcome <%= @user.fname%> <%=  @user.lname %>! </h1></div><br>
-	
-	<h1 class="username">Your username is <%= @user.username %></h1>
-	
-
-<body>
+<body class="profile-page">
 	<div><h1> Welcome <%= @user.fname%> <%=  @user.lname %>! </h1></div>
 	<h1>Your username is <%= @user.username %></h1>
-
 	<div>Update first name</div>
 	<form method="post" action="/update_fname">
 		<input type="text" name="fname" placeholder="Update First Name">
 		<input type="submit" value="Update">
 	</form>
-
-	
-	<div class="password">Update Password</div>
-	<form method="post" action="/update_password">
-		<input type="text" name="password" placeholder="Update Password">
-		<input type="submit" value="Update">
-
 	<div>Update Password</div>
 	<form id="update_pword" method="post" action="/update_password">
 		<input id="password1" type="text" name="password" placeholder="Update Password">
-
 	</form>
 		<button id="passcheck" href="/update_password">Update</button>
 
-
-
-	<div class="blog">My Blogs</div>
-	<h1>Create Blog</h1>
-	
 
 	<div>
 		<h1>Delete User Account</h1>
@@ -48,23 +25,13 @@
 	<h1>Create Blog</h1>
 	<div> <a href="/blogs/view"><button>My Blogs</button></a></div>
 	<br/>
-
 	<form method="post" action="/create_blog_post">
 		<input type="text" name="title" placeholder="Title">
-		<input type="text" name="category" placeholder="Category"><br>
-		<textarea rows="7" cols="70" type="text" name="content" placeholder="Content"></textarea><br>
+		<input type="text" name="category" placeholder="Category">
+		<input type="text" name="content" placeholder="Content">
 		<input type="submit" value="Post blog">
 	</form>
 
-
-
-<div class="delete">
-		<h1>Delete User Account</h1>
-		<form method="post" action="/delete_user">
-			<input type="submit" value="Delete Account">
-		</form>
-	</div>
-</div>
 
 	<form method="post" action="/logout">
 		<input type="submit" value="Logout">
@@ -72,4 +39,3 @@
 
 <script type="text/javascript" src="../../javascript/profile.js"></script>
 </body>
-
