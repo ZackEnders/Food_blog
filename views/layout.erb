@@ -7,6 +7,14 @@
 
 </head>
 <body>
+
+	<header>
+		<nav>
+			<li><a href="/user/<%= session[:user_id]%>/profile">Profile</a></li>
+			<li><a href="/blogs">Blog Feed</a></li>
+			<li><a href="/blogs/view">My Blogs</a></li>
+		</nav>
+	</header>
 <%= yield %>
 
 
