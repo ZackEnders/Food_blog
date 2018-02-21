@@ -1,22 +1,23 @@
-<!DOCTYPE html>
-<html>
-<head>
+<link rel="stylesheet" type="text/css" href="../../../../../css/main.css">
 
-	<title></title>
-</head>
 <body>
-<h2>EDIT BLOG</h2>
-
-<form action='/update_blog' method='post'>
-	<input type="text" name="title" placeholder='title'>
-	<input type="text" name="category" placeholder='category'>
-	<input type="text" name="content" placeholder="content">
-	<input type="submit" value="Update blog">
-
-
-</form>
-
-	
-
+	<div class="edit_blog_wrapper">
+<header class="header">
+	<h2 class="mainheader">EDIT BLOG</h2>
+		<form action='/blogs/<%= @id %>/delete_blog' method='post'>
+			<input class="blog_delete_button" type="submit" value="Delete Blog Post">
+		</form>
+</header>
+<div id="backG">
+	<form action='/blogs/<%= @id %>/update_blog' method='post'>
+		<div class="uline">T i t l e</div>
+			<div><input maxlength="30" class="blog_title" type="text" name="title" value="<%=@title%>" placeholder='Title'></div>
+		<div class="uline">C a t e g o r y</div>
+			<div><input maxlength="30" class="blog_category" type="text" name="category" value ="<%=@category%>" placeholder='Category'></div>
+		<div class="uline">C o n t e n t</div>
+			<div><textarea maxlength="150" class="blog_content" type="text" name="content" value="<%=@content%>" placeholder="Content"><%=@content%></textarea></div>
+			<div><input class="blog_update_button" type="submit" value="Update Blog"></div>
+		</div>
+	</form>	
+</div>
 </body>
-</html>
