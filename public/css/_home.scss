@@ -8,7 +8,7 @@ html, body {
 }
 
 
-body {
+home-page body {
 	background: url(https://mealpros.com/wp-content/uploads/2017/12/computerFood.jpg) no-repeat;
 	background-size: cover;
 	display: flex;
@@ -22,7 +22,7 @@ body {
 	text-align: center;
 }
 
-h1 {
+.home-page h1 {
 	color: #ffffff;
 	font: 900 96px 'Pacifico', cursive;
 	text-shadow: 0px, 2px, 4px rgba(0,0,0,0.6);
@@ -41,7 +41,7 @@ h1 {
 	margin: auto;
 }
 
-.form {
+.home-page form {
 	position: reative;
 	z-index: 1;
 	background: rgba(7, 40, 195, 0.8);
@@ -50,7 +50,7 @@ h1 {
 	text-align: center;
 }
 
-.form input {
+.home-page form input {
 	font-family: "Roboto", sans-serif;
 	outline: 1;
 	background: #f2f2f2;
@@ -62,7 +62,7 @@ h1 {
 	font-size: 14px;
 }
 
-.form button {
+.home-page form button {
 	font-family: "Roboto", sans-serif;
 	text-transform: uppercase;
 	outline: 0;
