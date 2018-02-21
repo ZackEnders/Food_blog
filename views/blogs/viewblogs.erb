@@ -1,12 +1,14 @@
 
 
-
-<div id="viewblogs-background">
-
-<hr>
-<h3>List of Blog titles</h3>
+<body>
+<div class="edit_blog_wrapper">
+<header class="header">
+<h2 class="viewheader">List of Blog titles</h2>
+</header>
+<div id="backG">
 <% @blogs.each do |t| %>
-<a href='/blogs/<%= t.id %>/<%= t.title %>/edit/<%= t.category%>/<%= t.content%>'><div><%= t.title %></div></a>
+<div class="uline"><a class="viewblogslinks" href='/blogs/<%= t.id %>/<%= t.title %>/edit/<%= t.category%>/<%= t.content%>'><%= t.title %></a></div>
 <% end %>
-
 </div>
+</div>
+</body>

@@ -9,7 +9,7 @@ require './models'
 get '/'  do
 
 
-erb :home
+erb :home, :layout => false
 end
 
 get '/login' do
@@ -74,7 +74,6 @@ end
 
 
 get '/blogs/view' do
-
 @user = User.find(session[:user_id])
 @blogs = Blog.where(user_id: @user.id)
 
