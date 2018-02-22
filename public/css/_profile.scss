@@ -1,3 +1,42 @@
 .profile-page {
-	background: green;
+	background: url(../../img/Food-Blog.jpg);
+	padding-top: 10%;
+	padding-left: 35%;
+
+}
+
+#box {
+	background-color: rgba(0,0,255, .7);
+	float: left;
+	text-align: center;
+	padding-right: 10%;
+}
+
+.welcome {
+	padding-top: 5%;
+	padding-bottom: 5%;
+	font-size: 30px;
+	font-color: green;
+	z-index: 3;
+}
+
+.username {
+	text-align: center;
+}
+
+.update {
+	text-align: center;
+}
+
+input[type=submit] {
+    text-decoration: none;
+ 	background: #2ecc71;
+ 	color: #fff;
+ 	display: #block;
+ 	padding: 10px 15px;
+ 	text-align: center;
+ 	font-size: 15px;
+ 	width: 50%;
+	margin-bottom: 15px;
+	padding: 5px;
 }
