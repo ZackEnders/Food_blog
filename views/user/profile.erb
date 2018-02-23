@@ -1,46 +1,49 @@
+<link rel="stylesheet" type="text/css" href="../../css/main.css">
 <body class="profile-page">
 <div id="box">
 	<div class="welcome"><h1> Welcome <%= @user.fname%> <%=  @user.lname %>! </h1></div>
 	
-	<h1 class="username">Your username is <%= @user.username %></h1>
+	<!-- <h1 class="username">Your username is <%= @user.username %></h1> -->
 	
-	<div class="update">Update first name</div>
+	<div class="update">UPDATE FIRST NAME</div>
+	<br/>
 	<form method="post" action="/update_fname">
 		<input type="text" name="fname" placeholder="Update First Name">
-		<input type="submit" value="Update">
+		<br/>
+		<input class="submit-btn" type="submit" value="Update">
 	</form>
 	
 
 
-	<div class="password">Update Password</div>
+	<div class="update">UPDATE PASSWORD</div>
+	<br/>
 	<form id="update_pword" method="post" action="/update_password">
 		<input id="password1" type="text" name="password" placeholder="Update Password">
 	</form>
-		<button id="passcheck" href="/update_password">Update</button>
+		<button class="submit-btn" id="passcheck" href="/update_password">Update</button>
 
 
 	<div class="delete">
-		<h1>Delete User Account</h1>
+		DELETE USER ACCOUNT
 		<form method="post" action="/delete_user">
-			<input type="submit" value="Delete Account">
+			<input class="submit-btn"  type="submit" value="Delete">
 		</form>
 	</div>
 
 
 	
-	<h1>Create Blog</h1>
-	<div> <a href="/blogs/view"><button>My Blogs</button></a></div>
+	<div class="delete">CREATE BLOG</div>
 	<br/>
 	<form method="post" action="/create_blog_post">
 		<input type="text" name="title" placeholder="Title">
 		<input type="text" name="category" placeholder="Category">
-		<br><textarea rows="4" cols="50"></textarea><br>
-		<input type="submit" value="Post blog">
+		<br/><textarea class="createbody"></textarea><br/>
+		<input class="submit-btn" type="submit" value="Post">
 	</form>
 
 
 	<form method="post" action="/logout">
-		<input type="submit" value="Logout">
+		<input class="submit-btn" type="submit" value="Logout">
 	</form>
 </div>
 

@@ -1,8 +1,20 @@
+.blog-box {
+	border: 2px solid white;
+	max-width: 800px;
+	padding: 10px;
+	margin: 10px auto;
+
+}
+
 
 .edit_blog_wrapper {
 	color: #F2F9F8;
 	text-align: center;
 	height: 100%;
+}
+.edit_blog_wrapper2 {
+	color: #F2F9F8;
+	text-align: center;
 }
 
 .header {
@@ -68,7 +80,7 @@
 .uline {
 	font-size: 16px;
 	text-transform: uppercase;
-	margin-bottom: 10px;
+	margin: 10px;
 }
 .mainheader {
 	padding-top: 8px;

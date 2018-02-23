@@ -1,11 +1,23 @@
-<div id='blog1'><h2>BLOG FEED</h2></div>
 
-<hr>
-<h3>List of Blogs</h3>
-<% @blogs.each do |t| %>
-<div id="blogfeed">
-<div><%= t.title %></div>
-<div><%= t.category %></div>
-<div><%= t.content %></div>
+<body>
+<div class="edit_blog_wrapper2">
+<header class="header">
+	<h1 class="mainheader">BLOG FEED</h1>
+	<br/>
+</header>
+	<div class="center">
+	<div id="backG">
+		<% @blogs.each do |t| %>
+		<div class="blog-box">
+			<div class="uline">T i t l e</div>
+			<div><%= t.title %></div>
+				<div class="uline">C a t e g o r y</div>
+				<div><%= t.category %></div>
+					<div class="uline">C o n t e n t</div>
+					<div><%= t.content %></div>
+		</div>
+		<% end %>
+	</div>
+	</div>
 </div>
-<% end %>
+</body>

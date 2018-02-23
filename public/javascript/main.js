@@ -31,7 +31,7 @@ button.addEventListener('click', function(){
 			if(number.match(/\d+/g)){
 				form.submit()
 			}else {
-				alert('need a numbers')
+				alert('Your password needs a number')
 			}
 })
 var createbtn = document.getElementById('button')
