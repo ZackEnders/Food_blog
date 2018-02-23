@@ -81,9 +81,9 @@ erb :"blogs/viewblogs"
 end
 
 get '/blogs/:id/:title/edit/:category/:content' do
-Blog.where(id: params[:id], title: params[:title], category: params[:category], content: params[:content])
+Blog.where(id: params[:id], title: params[:title], category: params[:category], content: params[:content])[0]
 	@title = params[:title]
-	@id = params[:id]
+
 	@category = params[:category]
 	@content = params[:content]
 

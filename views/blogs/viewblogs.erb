@@ -1,11 +1,11 @@
 <title>My Blogs</title>
-
+<link rel="stylesheet" type="text/css" href="../css/main.css">
 <body>
 <div class="edit_blog_wrapper">
 <header class="header">
 <h2 class="viewheader">LIST OF MY BLOGS</h2>
 </header>
-<div id="backG">
+<div class="backG">
 <% @blogs.each do |t| %>
 <div class="uline"><a class="viewblogslinks" href='/blogs/<%= t.id %>/<%= t.title %>/edit/<%= t.category%>/<%= t.content%>'><%= t.title %></a></div>
 <% end %>
